@@ -4,7 +4,7 @@
 
 QT += widgets
 TEMPLATE = app
-TARGET = TransperentClock
+TARGET = TransparentClock
 INCLUDEPATH += .
 
 # Input
