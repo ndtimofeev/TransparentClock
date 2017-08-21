@@ -1,4 +1,5 @@
 QT += widgets
+CONFIG += c++14
 TEMPLATE = app
 TARGET = TransparentClock
 INCLUDEPATH += .
