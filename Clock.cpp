@@ -24,7 +24,6 @@ Clock::Clock( QWidget* parent, Qt::WindowFlags flags )
 {
     QObject::connect( this->timer, &QTimer::timeout, [this](){ this->repaint(); } );
     this->timer->start( 500 );
-    this->setMouseTracking( true );
 }
 
 Clock::~Clock()
@@ -81,7 +80,24 @@ void Clock::paintEvent( QPaintEvent* event )
     QWidget::paintEvent( event );
 }
 
-void Clock::mouseMoveEvent( QMouseEvent* )
+// void Clock::mouseMoveEvent( QMouseEvent* )
+// {
+//     if ( this->skipMouseState )
+//     {
+//         this->hide();
+//         this->conn = QObject::connect( this->timer, &QTimer::timeout,
+//             [=]()
+//             {
+//                 if ( ! this->geometry().contains( QCursor::pos() ) )
+//                 {
+//                     this->show();
+//                     QObject::disconnect( this->conn );
+//                 }
+//             } );
+//     }
+// }
+
+void Clock::enterEvent( QEvent* )
 {
     if ( this->skipMouseState )
     {

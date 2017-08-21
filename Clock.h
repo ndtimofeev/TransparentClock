@@ -5,6 +5,9 @@
 #include <QObject>
 #include <QTimer>
 
+// gui
+#include <QDropEvent>
+
 // widgets
 #include <QWidget>
 
@@ -15,7 +18,7 @@ public:
     virtual ~Clock() override;
 
     virtual void paintEvent( QPaintEvent* event ) override;
-    virtual void mouseMoveEvent( QMouseEvent* event ) override;
+    void enterEvent( QEvent* event ) override;
 
     bool skipMouse() const;
     void setSkipMouse( bool );
