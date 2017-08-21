@@ -1,6 +1,6 @@
 QT += widgets
 TEMPLATE = app
-TARGET = TransperentClock
+TARGET = TransparentClock
 INCLUDEPATH += .
 target.path = /usr/bin
 INSTALLS += target
